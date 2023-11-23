@@ -10,4 +10,8 @@ ScranAdvisor.prototype.countRestaurants = function() {
 },0);
 };
 
+ScranAdvisor.prototype.findByName = function(restaurantName) {
+    return this.restaurants.find((restaurant) => restaurant.name === restaurantName);
+};
+
 module.exports = ScranAdvisor;

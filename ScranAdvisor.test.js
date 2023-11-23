@@ -19,7 +19,7 @@ describe('ScranAdvisor', () => {
         expect(actual).toBe(expected);
     })
 
-    test.skip('can find Happy Lamb Hot Pot restaurant by full name', () => {
+    test('can find Happy Lamb Hot Pot restaurant by full name', () => {
         const expected = {
             "id": 8,
             "name": "Happy Lamb Hot Pot",
@@ -37,8 +37,10 @@ describe('ScranAdvisor', () => {
             "latitude": 52.475159788534754,
             "longitude": -1.8966440079643896
         };
-        const actual = null;
-        expect(actual).toBe(expected);
+        const actual = scranAdvisor.findByName("Happy Lamb Hot Pot");
+        Object.keys(expected).forEach(key => {
+          expect(actual[key]).toEqual(expected[key]);
+      });
     })
 
     test.skip('can find the name of all restaurants', () => {
