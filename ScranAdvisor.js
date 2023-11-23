@@ -20,4 +20,11 @@ ScranAdvisor.prototype.getRestaurantNames = function() {
 },0);
 };
 
+ScranAdvisor.prototype.getRestaurantByCity = function(targetCity) {
+    return this.restaurants.filter((restaurant)=>{
+        return restaurant.location.town ===targetCity;
+},0);
+};
+
+
 module.exports = ScranAdvisor;
